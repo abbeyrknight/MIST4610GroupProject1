@@ -166,23 +166,23 @@ ORDER BY total_registrations DESC;
 <img width="638" height="334" alt="image" src="https://github.com/user-attachments/assets/d5e8de8b-73df-40dc-aa55-196d6a0547c9" />
 
 
-Complex Query 4: Which customers have signed all of their waivers?
+Complex Query 4: Which customers have signed at least one waiver? 
 
-Managerial justification: Helps WES identify participants who are fully cleared for all trips they registered for.
+Managerial justification: Helps WES identify customers who are partially or fully cleared for participation.
 
-SELECT c.customer_ID, c.customer_F_name, c.customer_L_Name, COUNT(r.Registration_ID) AS total_registrations
+SELECT DISTINCT c.customer_ID, c.customer_F_name, c.customer_L_Name
 
 FROM Customer c
 
-JOIN Registration r ON c.customer_ID = r.Customer_customer_ID
+JOIN Registration r
 
-GROUP BY c.customer_ID, c.customer_F_name, c.customer_L_Name
+ON c.customer_ID = r.Customer_customer_ID
 
-HAVING COUNT(r.Registration_ID) = SUM(CASE WHEN r.Registration_waiver_Signed = 'Yes' THEN 1 ELSE 0 END)
+WHERE r.Registration_waiver_Signed = 'Yes'
 
 ORDER BY c.customer_L_Name, c.customer_F_name;
 
-<img width="548" height="638" alt="image" src="https://github.com/user-attachments/assets/4ad1cad4-cf20-4734-a2f0-75035fd19e28" />
+<img width="634" height="934" alt="image" src="https://github.com/user-attachments/assets/8a01a36e-1d0d-4b97-8582-0c60b387d115" />
 
 
 Complex Query 5: Which customers have at least one cancelled registration?
@@ -202,22 +202,22 @@ ORDER BY c.customer_L_Name, c.customer_F_name;
 <img width="992" height="398" alt="image" src="https://github.com/user-attachments/assets/f6e39ce7-b1cf-4f77-9dfc-83943f628604" />
 
 
-Complex Query 6: Which customer types have the highest percentage of unsigned waivers?
+Complex Query 6: Which customers have never registered for a trip?
 
-Managerial justification: Helps WES identify which customer groups may need more waiver reminders.
+Managerial justification: Helps WES identify customers who may need more outreach or encouragement to participate.
 
-SELECT c.customer_Type, COUNT(r.Registration_ID) AS total_registrations, SUM(CASE WHEN r.Registration_waiver_Signed = 'No' THEN 1 ELSE 0 END) AS unsigned_waivers, CAST(100.0 * SUM(CASE WHEN r.Registration_waiver_Signed = 'No' THEN 1 ELSE 0 END) / COUNT(r.Registration_ID) AS DECIMAL(5,2)) AS percent_unsigned
+SELECT c.customer_ID, c.customer_F_name, c.customer_L_Name, c.customer_Type
 
 FROM Customer c
 
-JOIN Registration r ON c.customer_ID = r.Customer_customer_ID
+WHERE c.customer_ID NOT IN (SELECT r.Customer_customer_ID FROM Registration r)
+ORDER BY c.customer_L_Name, c.customer_F_name;
 
-GROUP BY c.customer_Type
 
-ORDER BY percent_unsigned DESC;
+<img width="1006" height="688" alt="image" src="https://github.com/user-attachments/assets/8aab8c1a-3a01-4ccc-bd63-2b8a9f15ff78" />
 
-<img width="1002" height="400" alt="image" src="https://github.com/user-attachments/assets/4bf38868-963e-4e8d-bbea-08d729995290" />
 
 ## Database information: 
 Name of the Database: mb_A1 
-Additional Information: Each query listed above is marked in the database using stored procedures which call be called using the following format: 
+Additional Information: Each query listed above was written and executed manually using SQL in the query editor.
+
