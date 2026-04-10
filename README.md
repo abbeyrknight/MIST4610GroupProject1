@@ -174,9 +174,7 @@ SELECT DISTINCT c.customer_ID, c.customer_F_name, c.customer_L_Name
 
 FROM Customer c
 
-JOIN Registration r
-
-ON c.customer_ID = r.Customer_customer_ID
+JOIN Registration r ON c.customer_ID = r.Customer_customer_ID
 
 WHERE r.Registration_waiver_Signed = 'Yes'
 
