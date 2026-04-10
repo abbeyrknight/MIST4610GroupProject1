@@ -27,3 +27,4 @@ Trips and Equipment rentals are handled independently, so customers can particip
 
 <img width="1000" height="1402" alt="image" src="https://github.com/user-attachments/assets/c3a94ad8-72ff-4445-9514-3c9f1d848ec1" />
 
+## Data Dictionary: 
