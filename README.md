@@ -27,6 +27,7 @@ Trips and Equipment rentals are handled independently, so customers can particip
 
 <img width="1000" height="1402" alt="image" src="https://github.com/user-attachments/assets/c3a94ad8-72ff-4445-9514-3c9f1d848ec1" />
 
+
 ## Data Dictionary: 
 
 ## Queries: 
@@ -44,6 +45,7 @@ ORDER BY c.customer_L_Name;
 
 <img width="996" height="372" alt="image" src="https://github.com/user-attachments/assets/520a69a0-0f20-4cd0-ab02-e6e1c2e880f8" />
 
+
 3. Which guests are in the database and who is their sponsor?
    
 Managerial justification: Helps WES verify that every guest has a valid university-affiliated sponsor.
@@ -57,6 +59,7 @@ WHERE customer_Type = 'Guest'
 ORDER BY customer_L_Name, customer_F_name;
 
 <img width="748" height="336" alt="image" src="https://github.com/user-attachments/assets/5437170d-c830-4d5d-b5dc-392d6d3d901c" />
+
 
 5. Which registrations are currently waitlisted?
    
@@ -72,6 +75,7 @@ ORDER BY Registration_ID;
 
 <img width="776" height="312" alt="image" src="https://github.com/user-attachments/assets/7afc9364-8732-44ad-87fb-96bd93649e30" />
 
+
 7. How many customers are there of each customer type?
    
 Managerial justification: Helps WES understand its membership composition to tailor outreach and pricing strategies.
@@ -86,6 +90,7 @@ ORDER BY total_customers DESC;
 
 <img width="694" height="414" alt="image" src="https://github.com/user-attachments/assets/169e5bf7-47f7-45da-b73b-7c62df03af44" />
 
+
 Complex Query 1: How many registrations are there for each registration status?
 
 Managerial justification: Helps WES track how many participants are confirmed, waitlisted, or cancelled.
@@ -99,6 +104,7 @@ GROUP BY Registration_status
 ORDER BY total_registrations DESC;
 
 <img width="480" height="264" alt="image" src="https://github.com/user-attachments/assets/72157768-9cd7-4eca-9ab2-fb61de6387c5" />
+
 
 Complex Query 2: Which customers have more than one registration?
 
@@ -118,6 +124,7 @@ ORDER BY total_registrations DESC;
 
 <img width="660" height="394" alt="image" src="https://github.com/user-attachments/assets/fd7d2970-492d-4571-b19d-bd26b4fd490a" />
 
+
 Complex Query 3:  How many registrations does each customer type have?
 
 Managerial justification: Helps WES understand which types of customers are participating most often.
@@ -133,6 +140,7 @@ GROUP BY c.customer_Type
 ORDER BY total_registrations DESC;
 
 <img width="638" height="334" alt="image" src="https://github.com/user-attachments/assets/d5e8de8b-73df-40dc-aa55-196d6a0547c9" />
+
 
 Complex Query 4: Which customers have signed all of their waivers?
 
@@ -152,6 +160,7 @@ ORDER BY c.customer_L_Name, c.customer_F_name;
 
 <img width="548" height="638" alt="image" src="https://github.com/user-attachments/assets/4ad1cad4-cf20-4734-a2f0-75035fd19e28" />
 
+
 Complex Query 5: Which customers have at least one cancelled registration?
 
 Managerial justification: Helps WES identify cancellation patterns and follow up with customers if needed.
@@ -167,6 +176,7 @@ WHERE r.Registration_status = 'cancelled'
 ORDER BY c.customer_L_Name, c.customer_F_name;
 
 <img width="992" height="398" alt="image" src="https://github.com/user-attachments/assets/f6e39ce7-b1cf-4f77-9dfc-83943f628604" />
+
 
 Complex Query 6: Which customer types have the highest percentage of unsigned waivers?
 
