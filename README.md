@@ -30,6 +30,30 @@ Trips and Equipment rentals are handled independently, so customers can particip
 
 ## Data Dictionary: 
 
+<img width="1116" height="884" alt="image" src="https://github.com/user-attachments/assets/6f1bd87f-2c7f-4915-900f-f3a696a957ba" />
+
+<img width="1070" height="512" alt="image" src="https://github.com/user-attachments/assets/ecd296aa-bcfb-4d1a-ad22-711efc9a2d80" />
+
+<img width="1104" height="724" alt="image" src="https://github.com/user-attachments/assets/ce288e84-1d69-41a5-a4f9-3a4c935a9acb" />
+
+<img width="1034" height="804" alt="image" src="https://github.com/user-attachments/assets/70e66a11-542a-4615-bcbb-c5acc2b8cc18" />
+
+<img width="1148" height="1120" alt="image" src="https://github.com/user-attachments/assets/fe170331-8980-4e4f-95e1-afd4a2b7b00e" />
+
+<img width="1156" height="596" alt="image" src="https://github.com/user-attachments/assets/a1b6ca24-82e6-4e73-a1a4-07f730dfa59f" />
+
+<img width="1026" height="632" alt="image" src="https://github.com/user-attachments/assets/dc93dee6-f922-49d7-8052-4f5cf36ec848" />
+
+<img width="1096" height="674" alt="image" src="https://github.com/user-attachments/assets/608bde19-eee2-4eec-aa5f-7ddc2198f204" />
+
+<img width="1190" height="934" alt="image" src="https://github.com/user-attachments/assets/f7e45c0b-2a3a-48f8-9d00-7873f3f5e9f9" />
+
+<img width="1120" height="578" alt="image" src="https://github.com/user-attachments/assets/e7f174d4-ae6f-491f-a9f2-6408f897b6d4" />
+
+<img width="1010" height="906" alt="image" src="https://github.com/user-attachments/assets/68adedff-4a03-49cb-afa1-af35885c0ea3" />
+
+<img width="1056" height="792" alt="image" src="https://github.com/user-attachments/assets/5446a1a0-7898-443a-967e-81e76028eb3d" />
+
 ## Queries: 
 1. Which customers have not signed their liability waiver?
    
@@ -46,7 +70,7 @@ ORDER BY c.customer_L_Name;
 <img width="996" height="372" alt="image" src="https://github.com/user-attachments/assets/520a69a0-0f20-4cd0-ab02-e6e1c2e880f8" />
 
 
-3. Which guests are in the database and who is their sponsor?
+2. Which guests are in the database and who is their sponsor?
    
 Managerial justification: Helps WES verify that every guest has a valid university-affiliated sponsor.
 
@@ -61,7 +85,7 @@ ORDER BY customer_L_Name, customer_F_name;
 <img width="748" height="336" alt="image" src="https://github.com/user-attachments/assets/5437170d-c830-4d5d-b5dc-392d6d3d901c" />
 
 
-5. Which registrations are currently waitlisted?
+3. Which registrations are currently waitlisted?
    
 Managerial justification: Helps WES monitor demand and decide whether to add more trip capacity.
 
@@ -76,7 +100,7 @@ ORDER BY Registration_ID;
 <img width="776" height="312" alt="image" src="https://github.com/user-attachments/assets/7afc9364-8732-44ad-87fb-96bd93649e30" />
 
 
-7. How many customers are there of each customer type?
+4. How many customers are there of each customer type?
    
 Managerial justification: Helps WES understand its membership composition to tailor outreach and pricing strategies.
 
@@ -195,4 +219,5 @@ ORDER BY percent_unsigned DESC;
 <img width="1002" height="400" alt="image" src="https://github.com/user-attachments/assets/4bf38868-963e-4e8d-bbea-08d729995290" />
 
 ## Database information: 
-Name of the Database: 
+Name of the Database: mb_A1 
+Additional Information: Each query listed above is marked in the database using stored procedures which call be called using the following format: 
